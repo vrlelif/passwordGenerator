@@ -54,7 +54,7 @@ Run the Application
 ```bash
 uvicorn main:app --reload
 ```
-The app will be available at http://127.0.0.1:8000
+The app will be available at http://127.0.0.1:8000/generate-password
 
 ###  Application Functionality
 #### 1. Password Generation
@@ -67,7 +67,7 @@ Endpoints
 
 The form and results are rendered via index.html
 
-#### 2. Password Security Check - Custom Endpoint
+#### 2. Password Security Check
 Checks the security of a given password based on:
 
 Minimum length of 12 characters.
@@ -81,7 +81,7 @@ Endpoints:
 
 The form and results are rendered via checkPassword.html
 
-#### 3. Currency Conversion - Third Party API Integration
+#### 3. Currency Conversion
 Converts an amount from one currency to another using live exchange rates.
 
 Endpoints
@@ -91,19 +91,14 @@ Endpoints
 The form and results are rendered via currency.html
 
 ## Dependencies
-**FastAPI**: Web framework.
-
-**Jinja2**: Templating engine.
-
-**freecurrencyapi**: Currency conversion API.
-
-**python-dotenv**: Environment variable management.
-
-**uvicorn**: ASGI server.
-
+FastAPI: Web framework.
+Jinja2: Templating engine.
+freecurrencyapi: Currency conversion API.
+python-dotenv: Environment variable management.
+uvicorn: ASGI server.
 ```bash
 pip install fastapi jinja2 freecurrencyapi python-dotenv uvicorn
 ```
-**PS: apiKey is added for conversion API in .env file.**
+**PS: I added apiKey for conversion in .env file.**
 
-**Please see http://127.0.0.1:8000/docs for Swagger UI**
+**Go to http://127.0.0.1:8000/docs Swagger UI**
