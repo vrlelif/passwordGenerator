@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../passwordGenerator/style.css">
+    <title>Currency Converter</title>
+
+</head>
+<style>
+    .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+
+    form,
+    h1 {
+        text-align: center;
+    }
+
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+
+<body class="center">
+    <h1>Currency Converter</h1>
+    <form method="post" action="/get-conversion">
+        <label for="baseCurrency">Currency to convert from:</label>
+        <select name="baseCurrency" id="baseCurrency" >
+            {% if currencyList.data %}
+            {% for key, value in currencyList.data.items() %}
+            <option value="{{key}}">{{ value.name }} - {{ key }}</option>
+            {% endfor %}
+            {% endif %}
+        </select>
+
+        <label for="currency">Currency to convert to:</label>
+        <select name="currency" id="currency">
+            {% if currencyList.data %}
+            {% for key, value in currencyList.data.items() %}
+            <option value="{{key}}">{{ value.name }} - {{ key }}</option>
+            {% endfor %}
+            {% endif %}
+        </select>
+
+        <label for="amount">Amount to convert:</label>
+        <input type="number" name="amount" id="amount" min="0.01" step="0.01" required>
+
+        <input type="submit" value="Get Currency">
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p><strong>{{ result.baseCurrency }} {{ result.amount }} = {{ result.targetCurrency }} {{ result.convertedAmount
+                }}</strong></p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="error">
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+</body>
+
+</html>
