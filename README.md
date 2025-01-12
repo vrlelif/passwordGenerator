@@ -67,7 +67,7 @@ Endpoints
 
 The form and results are rendered via index.html
 
-#### 2. Password Security Check
+#### 2. Password Security Check - Custom Endpoint
 Checks the security of a given password based on:
 
 Minimum length of 12 characters.
@@ -81,7 +81,7 @@ Endpoints:
 
 The form and results are rendered via checkPassword.html
 
-#### 3. Currency Conversion
+#### 3. Currency Conversion - Third Party API Integration
 Converts an amount from one currency to another using live exchange rates.
 
 Endpoints
@@ -99,6 +99,6 @@ uvicorn: ASGI server.
 ```bash
 pip install fastapi jinja2 freecurrencyapi python-dotenv uvicorn
 ```
-**PS: I added apiKey for conversion in .env file.**
+**PS: apiKey is added for conversion API in .env file.**
 
 **Go to http://127.0.0.1:8000/docs Swagger UI**
