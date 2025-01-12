@@ -92,10 +92,15 @@ The form and results are rendered via currency.html
 
 ## Dependencies
 FastAPI: Web framework.
+
 Jinja2: Templating engine.
+
 freecurrencyapi: Currency conversion API.
+
 python-dotenv: Environment variable management.
+
 uvicorn: ASGI server.
+
 ```bash
 pip install fastapi jinja2 freecurrencyapi python-dotenv uvicorn
 ```
