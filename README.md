@@ -106,4 +106,4 @@ pip install fastapi jinja2 freecurrencyapi python-dotenv uvicorn
 ```
 **PS: apiKey is added for conversion API in .env file.**
 
-**Go to http://127.0.0.1:8000/docs Swagger UI**
+**Please see http://127.0.0.1:8000/docs for Swagger UI**
