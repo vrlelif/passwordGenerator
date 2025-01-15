@@ -76,7 +76,7 @@ Avoiding common patterns or weak passwords.
 
 Endpoints:
 - GET /check-password: Displays the password security check form.
-- POST /check-password: Evaluates the security of the provided password.
+- POST /check-password: Evaluates the security of the provided password. 
 
 
 The form and results are rendered via checkPassword.html
